@@ -1,0 +1,17 @@
+﻿html {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-image: url(../Images/carMErc.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    margin: 0;
+    overflow: no-display;
+}
+.jumbotron{
+    opacity:0.8;
+}

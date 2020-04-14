@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+    <div class="text-center">
+        <h1 class="display-4"><b>Welcome!</b></h1>
+    </div>
+    <div class="jumbotron">
+        <h1>CAR VIN Decoder</h1>
+        <p class="lead">
+            Car VIN Decoder application is a free application to check the details about your car! Just put your car's VIN into
+            textbox!
+        </p>
+        <p>Enter your VIN:</p>
+        <form action="/" method="post">
+            @Html.TextBox("vin")
+            <input id="ConfirmVIN" type="submit" value="Check!" />
+        </form>   
+    </div>
+    <div class="card">
+        @if (!string.IsNullOrEmpty(ViewBag.Error))
+        {
+            <p>@ViewBag.Error</p>
+        }
+        else if(ViewBag.Car != null && ViewBag.Car.Message.Code == 0)
+        {
+            <ul>
+                Information about your car:
+                <li>Year: @ViewBag.Car.Data.Year</li>
+                <li>Make: @ViewBag.Car.Data.Make</li>
+                <li>Model: @ViewBag.Car.Data.Model</li>
+                <li>Engine: @ViewBag.Car.Data.Engine</li>
+                <li>Manufacturer: @ViewBag.Car.Data.Manufacturer</li>
+                <li>Trim: @ViewBag.Car.Data.Trim</li>
+                <li>Transmission: @ViewBag.Car.Data.Transmission</li>
+            </ul>
+        }
+    </div>
+
